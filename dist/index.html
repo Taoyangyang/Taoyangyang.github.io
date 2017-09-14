@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><title>陆海空</title><link href=./static/css/app.b9e2b35beb144749c21f05c7fc14b621.css rel=stylesheet></head><body><div id=app-box></div><script type=text/javascript src=./static/js/manifest.1b482bfe5a399b178f2a.js></script><script type=text/javascript src=./static/js/vendor.24ea29c4b26ce597b81e.js></script><script type=text/javascript src=./static/js/app.243c80bdfa564ee1d5e1.js></script></body><script src="https://api.map.baidu.com/api?v=2.0&ak=Gl9ARRgPlcASCW55a33dw5AE8URjrKRu"></script><script type=text/javascript>var Request = new Object();
+		Request = GetRequest();
+		//console.log(Request)
+		if (Request.token) {
+			var n = Request.token.indexOf("#");
+			var token = Request.token.slice(0, n);
+			console.log(n, token)
+			localStorage.token = token;
+		}
+	
+		function GetRequest() {
+		 	var url = location.href; //获取url中"?"符后的字串
+		 	//console.log(location)
+		 	var theRequest = new Object();
+	 		if (url.indexOf("?") != -1) {
+	 			var n=url.indexOf("?")+1
+	  		var str = url.slice(n);
+	  		strs = str.split("&");
+	  		for(var i = 0; i < strs.length; i ++) {
+	   			theRequest[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
+	  		}
+		 	}
+		 	return theRequest;
+		}</script></html>
