@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{width: 400px; margin: 20px auto; text-align: center; border: 1px solid orange; border-radius: 10px;}
+			progress{width: 90%; margin: 10px 0;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<progress max="100" value="30"></progress>
+			<p><span id="showVal">30</span>%</p>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		var pros = document.getElementsByTagName("progress")[0];
+		var showVal = document.getElementById("showVal");
+		var ID; 
+		ID = setInterval(function(){
+			if(pros.value<100){
+				pros.value ++
+				showVal.innerHTML = pros.value
+				//console.log(pros.value)
+			}else{
+				clearInterval(ID)
+			}
+		},100)
+	</script>
+</html>
