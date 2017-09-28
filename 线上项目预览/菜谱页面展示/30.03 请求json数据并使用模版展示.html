@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#content{
+				width: 500px;
+				margin: 0 auto;
+				padding: 30px;
+				border: 2px solid orange;
+				border-radius: 5px;
+			}
+			.bigImg{
+				width: 400px;
+				height: 300px;
+				display: block;
+				margin: 0 auto;
+			}
+			#littleImg{
+				width: 300px;
+				height: 200px;
+				display: block;
+				margin: 0 auto;
+			}
+			#btn{
+				display: inline-block;
+				width: 100px;
+				padding: 7px 15px;
+				margin: 10px auto;
+				margin-left: calc(50% - 50px);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="content"></div>
+		<button id="btn">确定</button>
+	</body>
+	
+	<script src="jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="template简洁语法.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		$('#btn').click(function(){
+//			var inpName = $('#inp').val();
+//			var txt = encodeURIComponent(inpName);
+			//alert(inpName);
+			$.ajax({
+				type:"get",
+				dataType:'json',
+				url:"30.02_3菜谱数据.json",
+				success:function(respose){
+					console.log(respose.result);
+					var data = respose.result;
+					var html = template('menu', data);
+					document.getElementById('content').innerHTML = html;
+				},
+				async:true
+			});
+		});
+		
+		$(document).on("click", ".bigImg", function(e){
+			console.log(e.currentTarget.dataset.id)
+		})
+	</script>
+	
+	<!--父模版-->
+	<script type="text/html" id="menu">
+		{{if reason == Success}} 
+			<h1>红烧肉菜谱</h1>
+			{{each data as value i}}
+				<h2>{{value.title}}</h2>
+				<!--菜的图片-->
+				{{each value.albums as valu i}}
+					<img class="bigImg" data-id={{value.id}} src={{valu}}>
+				{{/each}}
+				<p>主料：{{value.ingredients}}</p>
+				<p>辅料：{{value.burden}}</p>
+				<p>菜品介绍：{{value.imtro}}</p>
+				<p>菜品功效：{{value.tags}}</p>
+				<!--各步骤的图片和步骤-->
+				{{each value.steps as val i}}
+					<h3>第{{i+1}}步</h3>
+					<img id="littleImg" src={{val.img}}>
+					<p>{{val.step}}</p>
+				{{/each}}
+				<p>=====================================</p>			
+			{{/each}}
+		{{/if}}
+	</script>
+</html>
