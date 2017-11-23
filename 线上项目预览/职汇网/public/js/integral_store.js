@@ -50,5 +50,5 @@ var app = new Vue({
 })
 
 window.onscroll = function(){
-	app	.downUpload()
+	app.downUpload()
 }
