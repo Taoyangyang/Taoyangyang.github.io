@@ -7,6 +7,15 @@ var app = new Vue({
 		hintTxt    : "没有更多数据",	//提示内容
 		showHint   : false,			//提示开关
 	},
+	mounted: function(){
+		var that = this;
+		that.$nextTick(function(){
+			//上拉加载更多
+			window.onscroll = function(){
+				that.downUpload()
+			}
+		})
+	},
 	created: function(){
 		var that = this;
 		that.showLoading = true;		//加载动画
@@ -48,7 +57,3 @@ var app = new Vue({
 		}
 	}
 })
-
-window.onscroll = function(){
-	app.downUpload()
-}

@@ -3,6 +3,15 @@ var app = new Vue({
 	data:{
 		
 	},
+	mounted: function(){
+		var that = this;
+		that.$nextTick(function(){
+			//上拉加载更多
+			window.onscroll = function(){
+				app	.downUpload()
+			}
+		})
+	},
 	created(){
 		
 	},
@@ -22,7 +31,3 @@ var app = new Vue({
 		}
 	}
 });
-
-window.onscroll = function(){
-	app	.downUpload()
-}

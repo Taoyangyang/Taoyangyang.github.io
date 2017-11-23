@@ -29,7 +29,12 @@ var app = new Vue({
 						swiper.startAutoplay();
 	    			},
 				});
-			},500)
+			},500);
+			//上拉加载更多
+			window.onscroll = function(){
+				that.downUpload()
+			}
+
 		})
 	},
 	created(){
@@ -97,6 +102,3 @@ var app = new Vue({
 	}
 })
 
-window.onscroll = function(){
-	app	.downUpload()
-}
