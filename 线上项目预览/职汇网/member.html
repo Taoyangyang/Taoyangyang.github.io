@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>会员中心</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/member.css" />
+	</head>
+	<body>
+		<div class="member" v-cloak>
+			<header-com header_title="会员中心" :has_right = "false"></header-com>
+			<div class="content">
+				<!--userInfo-->
+				<div class="user_info">
+					<div class="shopCar"></div>
+					<div id="user_icon">
+						<input id="btnUp" type="button" multiple="multiple"/>
+						<img src="public/images/jllb.png"/>
+					</div>
+					<p>I don`t know why</p>
+				</div>
+				<!--orderList-->
+				<div class="order_list">
+					<p class="order_title flex_between_v">
+						<span>我的订单</span>
+						<span class="vertical_v">查看全部订单 &nbsp; <img src="public/images/bj-qj.png" width="8px"/></span>
+					</p>
+					<ul class="flex_around_v">
+						<li v-for="item in order_list">
+							<img :src="item.icon" width="38"/>
+							<p>{{item.name}}</p>
+						</li>
+					</ul>
+				</div>
+				<!--normalTools-->
+				<div class="tools">
+					<p class="tools_title">常用工具</p>
+					<ul>
+						<li v-for="(item,index) in normal_tools" @click="goTool(index)">
+							<img :src="item.icon" width="38"/>
+							<p>{{item.name}}</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--提示-->
+			<hint :hint_txt="hintTxt" :show_hint="showHint"></hint>
+			<!--加载动画-->
+			<loading v-if="showLoading"></loading>
+			<!--底部导航-->
+			<footer-com :Sindex="2"></footer-com>
+		</div>
+	</body>
+	
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/ajaxupload.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/member.js" type="text/javascript" charset="utf-8"></script>
+</html>

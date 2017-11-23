@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>求职意向</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/job_intension.css" />
+	</head>
+	<body>
+		<div class="job_intension" v-cloak>
+			<header-com header_title="添加求职意向" header_right="保存" :has_left="true" :has_right = "true" @right_click="rightClick"></header-com>
+			<div class="content">
+				<p class="jobType flex_between_v">
+					<span class="label">期望职位：</span>
+					<span class="flex_between_v" @click="chooseP">选择职位&nbsp;<img src="public/images/bj-qj.png" width="8" /></span>
+				</p>
+				<p class="jobAddress flex_between_v">
+					<span class="label">工作城市：</span>
+					<span>
+						<select v-model="province">
+							<option value="">请选择</option>
+							<option value="">北京</option>
+							<option value="">上海</option>
+							<option value="">广东</option>
+							<option value="">河南</option>
+							<option value="">浙江</option>
+							<option value="">内蒙古</option>
+							<option value="">呼和浩特沙特柞木左旗西田存</option>
+						</select>
+						<select v-model="city">
+							<option value="">请选择</option>
+							<option value="">上海</option>
+							<option value="">广东</option>
+							<option value="">河南</option>
+							<option value="">浙江</option>
+						</select>
+					</span>
+					<!--<span @click="choosAddress">{{UnowAddress}}</span>-->
+				</p>
+				<p class="money flex_between_v">
+					<span class="label">薪资要求：</span>
+					<span>
+						<input type="number" v-model="minMoney"/> K--
+						<input type="number" v-model="maxMoney"/> K
+					</span>
+				</p>
+			</div>
+			<!--选择职位的-->
+			<div v-if="choosePost" class="choosePosition">
+				<header class="header_com">
+	        		<a class="header_left" @click="choosePost=false">
+		            	<div class="dt">
+		                	<div></div>
+		            	</div>
+	        		</a>
+	        		<p class="header_title">选择职位类型</p>
+	        		<p class="header_right vertical_v">
+	        			<span @click="choosePost=false">完成</span>  
+	        		</p>
+	    		</header>
+	    		<div class="choooseContent">
+	    			<div class="search">
+	    				<input type="text" placeholder="请输入您要找的企业的名字" />
+	    				<img src="public/images/ss.png" width="20"/>
+	    			</div>
+	    			<div class="searchSorts flex_between_v">
+	    				<ul>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    				</ul>
+	    				<ul>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    				</ul>
+	    				<ul>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    				</ul>
+	    			</div>
+	    		</div>
+			</div>
+		</div>
+	</body>
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/job_intension.js" type="text/javascript" charset="utf-8"></script>
+</html>

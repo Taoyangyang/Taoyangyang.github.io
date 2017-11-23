@@ -1,0 +1,100 @@
+/*页面顶部*/
+.pageTop{
+	padding: 5px 10px; 
+	width: -moz-calc(100% - 20px);
+	width: -webkit-calc(100% - 20px);
+	width: calc(100% - 20px); 
+	height: 39px; 
+	background: white; 
+	border-bottom: 1px solid #f0f0f0; 
+	position: fixed; 
+	top: 0; 
+	left: 0;
+	z-index: 10;
+}
+
+/*轮播图*/
+.roasting{margin-top: 50px;}
+.roasting .swiper-pagination-bullet-active{background: #24c5b5;}
+
+/*分类*/
+.sorts{
+	padding: 15px; 
+	background: white;
+}
+.sorts div{text-align: center;}
+.sorts div p{font-size: .9rem;}
+
+/*搜索*/
+.search{
+	margin: 8px; 
+	padding: 8px; 
+	background: white;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.search input{
+	padding: 5px; 
+	margin-left: 5px;
+	width: calc(100% - 35px); 
+	width: -moz-calc(100% - 35px);
+	width: -webkit-calc(100% - 35px);
+	border: none;
+}
+.search::before{
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../images/ss.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	-webkit-background-size:  100% 100%;
+}
+
+/*列表部分*/
+.list{
+	margin: 8px;
+	margin-bottom: 50px;
+}
+.list .list_item{
+	font-size: .9rem;
+	padding: 8px;
+	padding-bottom: 3px;
+	background: white;
+	margin-bottom: 8px;
+	border-bottom: 1px solid #f0f0f0;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.list .list_item img{
+	margin-right: 8px;
+}
+.list .list_item .list_info{
+	width: calc(100% - 80px);
+	width: -moz-calc(100% - 80px);
+	width: -webkit-calc(100% - 80px);
+}
+.list .list_item .list_info p{
+	margin: 3px 0;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.list .list_item .list_info .sub_title{
+	font-size: .8rem;
+}
+.list .list_item .list_info p .price{
+	color: #d80a0a;
+}
+.list .list_item .list_info .list_item_btn{
+	padding: 4px 8px;
+	color: white;
+	font-size: .8rem;
+	background: #24c5b5;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>自我评价</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/self_evaluation.css" />
+	</head>
+	<body>
+		<div class="self_evaluation" v-cloak>
+			<header-com header_title="自我评价" header_right="完成" :has_left="true" :has_right = "true" @right_click="rightClick"></header-com>
+			<div class="content">
+				<textarea v-model="evaluation" placeholder="请输入对自己的评价..."></textarea>
+				<p>0/200</p>
+			</div>
+		</div>
+	</body>
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/self_evaluation.js" type="text/javascript" charset="utf-8"></script>
+</html>

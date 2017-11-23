@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>投递记录</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/deliver_record.css" />
+	</head>
+	<body>
+		<div class="deliver_record" v-cloak>
+			<header-com header_title="投递记录" :has_left="true"></header-com>
+			<div class="content">
+				<!--列表部分-->
+				<div class="list">
+					<div v-for="item in 9" class="list_item flex_start" @click="item_detail()">
+						<img src="public/images/tu.png" width="70" height="70"/>
+						<div class="list_info">
+							<p class="title">后来</p>
+							<p class="sub_title font_2_color">你都如何回忆我？</p>
+							<p class="flex_between_v">
+								<span class="price">无价</span>
+								<span class="PNum font_2_color">2017-11-21</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/deliver_record.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>简历预览</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/resume_preview.css" />
+	</head>
+	<body>
+		<div class="resume_preview" v-cloak>
+			<header-com header_title="简历预览" :has_left="true" :has_right = "false"></header-com>
+			<div class="content">
+				<!--self_info-->
+				<div class="list_div self_info">
+					<p class="list_title flex_start_v">
+						<img src="public/images/yl-grxx.png" width="20"/>个人信息
+					</p>
+					<p v-for="item in self_info" class="list_main flex_start_v">
+						<span class="w120">{{item.label}}</span>
+						<span>{{item.value}}</span>
+					</p>
+				</div>
+				<!--job_intention-->
+				<div class="list_div job_intention">
+					<p class="list_title flex_start_v">
+						<img src="public/images/yl-qzyx.png" width="20"/>求职意向
+					</p>
+					<p v-for="item in job_intention" class="list_main flex_start_v">
+						<span class="w120">{{item.label}}</span>
+						<span>{{item.value}}</span>
+					</p>
+				</div>
+				<!--education-->
+				<div class="list_div education">
+					<p class="list_title flex_start_v">
+						<img src="public/images/yl-jybj.png" width="20"/>教育背景
+					</p>
+					<p v-for="item in education" class="list_main flex_start_v">
+						<span class="w120">{{item.label}}</span>
+						<span>{{item.value}}</span>
+					</p>
+				</div>
+				<!--work_experience-->
+				<div class="list_div work_experience">
+					<p class="list_title flex_start_v">
+						<img src="public/images/yl-gzjy.png" width="20"/>工作经验
+					</p>
+					<p v-for="item in work_experience" class="list_main flex_start_v">
+						<span class="w120">{{item.label}}</span>
+						<span>{{item.value}}</span>
+					</p>
+				</div>
+				<!--self-evaluation-->
+				<div class="list_div self_evaluation">
+					<p class="list_title flex_start_v">
+						<img src="public/images/yl-zwpj.png" width="20"/>自我评价
+					</p>
+					<p class="self_evaluation">一缕晨光 唤醒了多情的梦 带泪的灵魂 静立在爱的阳光里 享受你温情的抚摸 无声地陪伴 明媚了多雨的天空 脆弱的生命 绽放感动的芬芳 动人的微笑 温暖了阴霾的深秋 湿透了的季节 不再荒芜无边 迷离的双眸 闪烁着久违的光芒 在这萧瑟的秋日里 我只想说 阳光 有你真好</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/resume_preview.js" type="text/javascript" charset="utf-8"></script>
+</html>

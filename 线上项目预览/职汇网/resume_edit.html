@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>编辑简历</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/resume_edit.css" />
+	</head>
+	<body>
+		<div class="resume_edit" v-cloak>
+			<header-com header_title="简历编辑" header_right="保存" :has_left="true" :has_right = "true" @right_click="rightClick"></header-com>
+			<div class="content">
+				<!--userInfo-->
+				<div class="user_info">
+					<div class="shopCar"></div>
+					<div id="user_icon">
+						<input id="btnUp" type="button" multiple="multiple" />
+						<img src="public/images/jllb.png"/>
+					</div>
+					<p>I don`t know why</p>
+					<span class="preview" @click="resume_preview">简历预览</span>
+				</div>
+				<!--userList-->
+				<ul>
+					<li v-for="(item,index) in list" class="flex_between_v" @click="listItem(index)">
+						<span>{{item}}</span>
+						<img src="public/images/bj-qj.png" width="7"/>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/ajaxupload.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/resume_edit.js" type="text/javascript" charset="utf-8"></script>
+</html>

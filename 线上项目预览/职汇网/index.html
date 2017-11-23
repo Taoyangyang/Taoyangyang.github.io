@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="static/css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/index.css" />
+	</head>
+
+	<body>
+		<div class="indexDiv" v-cloak>
+			<!--页面顶部-->
+			<div class="pageTop flex_between_v">
+				<img src="public/images/logo.png" height="23" />
+				<img src="public/images/dingwei.png" height="23" />
+			</div>
+			<!--轮播图-->
+			<div class="roasting">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div v-for="item in roastImgs" class="swiper-slide">
+							<img :src="item" width="100%"/>
+						</div>
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			<!--分类-->
+			<div class="sorts flex_between_v">
+				<div v-for="(item,index) in sorts" @click="sortsClick(index)">
+					<img :src="item.icon" width="50"/>
+					<p>{{item.name}}</p>
+				</div>
+			</div>
+			<!--搜索-->
+			<div class="search flex_start_v">
+				<input type="text" placeholder="请输入您要找的企业的名字" />
+			</div>
+			<!--列表部分-->
+			<div class="list">
+				<div v-for="item in 9" class="list_item flex_start" @click="item_detail()">
+					<img src="public/images/tu.png" width="70" height="70"/>
+					<div class="list_info">
+						<p class="title flex_between_v">
+							<span>后来</span>
+							<span class="list_item_btn">免费</span>
+						</p>
+						<p class="sub_title font_2_color">你都如何回忆我？</p>
+						<p class="flex_between_v">
+							<span class="price">无价</span>
+							<span class="PNum font_2_color">已报名5201314人</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--提示-->
+			<hint :hint_txt="hintTxt" :show_hint="showHint"></hint>
+			<!--加载动画-->
+			<loading v-if="showLoading"></loading>
+			<!--底部导航-->
+			<footer-com :Sindex="0"></footer-com>
+		</div>
+	</body>
+
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/index.js" type="text/javascript" charset="utf-8"></script>
+</html>

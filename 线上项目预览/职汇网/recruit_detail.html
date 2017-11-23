@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>招工信息详情</title>
+		<link rel="stylesheet" type="text/css" href="static/css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/recruit_detail.css" />
+	</head>
+	<body>
+		<div class="recruit_detail">
+			<header-com header_title="招工信息详情" :has_left="true" :has_right = "false"></header-com>
+			<!--roasting-->
+			<div class="roasting">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div v-for="item in roastImgs" class="swiper-slide">
+							<img :src="item" width="100%"/>
+						</div>
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			<!--address-->
+			<div class="address_email">
+				<p class="title">if you miss the train i am on</p>
+				<p class="flex_start_v">
+					<img src="public/images/gsdz.png"/>
+					<span>公司地址：河南龙乡路</span>
+				</p>
+				<p class="flex_start_v">
+					<img src="public/images/e-mail.png"/>
+					<span>E-mail：2585469768@qq.com</span>
+				</p>
+			</div>
+			<!--company_info-->
+			<div class="company_info">
+				<p class="title">公司简介</p>
+				<div class="Cinfo">
+					if u miss the train i am on; u will know that i am gone; we do not wannt be to like them, u know that .
+				</div>
+				<img src="public/images/zhangkai.png" width="20"/>
+			</div>
+			<!--recruit_infomation-->
+			<div class="recruit_infomation">
+				<p class="title">招聘职位信息</p>
+				<p class="info_item"><span>职位名称：</span>Programer</p>
+				<p class="info_item"><span>职位要求：</span>Write the code</p>
+				<p class="info_item"><span>薪资待遇：</span>10k-20k</p>
+				<p class="info_item"><span>工作地点：</span>hangzhou China</p>
+			</div>
+			<!--submit resume-->
+			<div class="submit_resume" @click="submit_resume"> 投递简历 </div>
+		</div>
+	</body>
+	
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/recruit_detail.js" type="text/javascript" charset="utf-8"></script>
+</html>

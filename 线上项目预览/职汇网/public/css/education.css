@@ -1,0 +1,10 @@
+.content{margin-top: 50px; padding-bottom: 10px; background: white; font-size: .95rem;}
+.content p{padding: 5px 10px; min-height: 30px; border-bottom: 1px solid #e6e6e6;}
+.content span.label{display: inline-block; width: 90px;}
+.content p input[type="text"]{width: calc(100% - 90px); height: 25px; border: none; text-align: right;}
+.content p input[type="month"]{width: 100px; border: none;}
+.content p select{border: none; width: 90px;}
+.schoolContent{padding: 10px; vertical-align: top;}
+.schoolContent .label{display: block !important;}
+.schoolContent textarea{padding: 5px; margin-top: 10px; width: calc(100% - 12px); height: 80px; border: 1px solid #E6E6E6; border-radius: 5px;}
+.schoolContent .fontNum{margin-left: calc(100% - 50px); color: #ccc;}

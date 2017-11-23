@@ -1,0 +1,62 @@
+/*轮播图*/
+.roasting{margin-top: 50px;}
+.roasting .swiper-pagination-bullet-active{background: #24c5b5;}
+
+/*地址和email*/
+.address_email{
+	padding: 5px 10px;
+	background: white;
+}
+.address_email .title{
+	color: #24c5b5;
+	font-weight: bold;
+	font-size: 1rem;
+	margin-bottom: 15px;
+}
+.address_email p{
+	margin: 5px ;
+	font-size: .9rem;
+	color: #999;
+}
+.address_email p img{
+	width: 18px;
+	height: 18px;
+	margin-right: 10px;
+}
+/*company_info*/
+.company_info{ margin-top: 10px; padding: 5px 10px; background: white; }
+.company_info .title{ font-weight: bold; font-size: .95rem; }
+.company_info .Cinfo{ margin: 5px 0; color: #999; }
+.company_info img{ 
+	margin-left: calc(50% - 10px); 
+	margin-left: -moz-calc(50% - 10px); 
+	margin-left: -webkit-calc(50% - 10px); 
+}
+
+/*recruit_infomation*/
+.recruit_infomation{
+	margin-top: 10px;
+	padding: 10px;
+	background: white;
+}
+.recruit_infomation .title{margin-bottom: 5px; font-weight: bold; font-size: .95rem; }
+.recruit_infomation .info_item{
+	padding: 3px 0;
+	font-size: .9rem;
+}
+.recruit_infomation .info_item span{
+	color: #999;
+}
+
+/*submit resume*/
+.submit_resume{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 40px;
+	width: 100%;
+	background: #24c5b5;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+}

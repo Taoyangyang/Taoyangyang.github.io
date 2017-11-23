@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>简历列表</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/resume_list.css" />
+	</head>
+	<body>
+		<div class="resume_list" v-cloak>
+			<header-com header_title="简历列表" header_right="新建" :has_left="true" :has_right = "true" @right_click="rightClick"></header-com>
+			<div class="content">
+				<!--无简历状态-->
+				<div v-if="0" class="noData">
+					<img src="public/images/kzt-wjl.png" width="100"/>
+					<p>您还没有简历哦，快去新建简历吧！</p>
+				</div>
+				<!--有简历状态-->
+				<div class="hasData">
+					<ul>
+						<li v-for="item in 2" class="flex_start_v" @click="resume_edit">
+							<img src="public/images/jllb.png" width="60" height="60"/>
+							<div class="list_detail">
+								<p>简历名称</p>
+								<br />
+								<p>2017-11-20</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/resume_list.js" type="text/javascript" charset="utf-8"></script>
+</html>

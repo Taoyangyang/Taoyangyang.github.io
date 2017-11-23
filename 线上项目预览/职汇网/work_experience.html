@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>工作经历</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/work_experience.css" />
+	</head>
+	<body>
+		<div class="work_experience" v-cloak>
+			<header-com header_title="工作经历" header_right="保存" :has_left="true" :has_right = "true" @right_click="rightClick"></header-com>
+			<div class="content">
+				<p class="jobType flex_between_v">
+					<span class="label">职位类型：</span>
+					<span class="flex_between_v" @click="chooseP">选择职位&nbsp;<img src="public/images/bj-qj.png" width="8" /></span>
+				</p>
+				<p class="jobName flex_between_v">
+					<span class="label">职位名称：</span>
+					<input type="text" v-model="job_name" placeholder="必填" />
+				</p>
+				<p class="companyName flex_between_v">
+					<span class="label">公司名称：</span>
+					<input type="text" v-model="company_name" placeholder="请填写公司名称" />
+				</p>
+				<p class="time flex_between_v">
+					<span class="label">时间段：</span>
+					<span>
+						<input type="month" v-model="Btime" />至<input type="month" v-model="Etime" />
+					</span>
+				</p>
+				<div class="jobContent">
+					<span class="label">工作内容：</span>
+					<textarea v-model="job_content" placeholder="请填写工作内容..."></textarea>
+					<span class="fontNum">0/200</span>
+				</div>
+			</div>
+			<!--选择职位的-->
+			<div v-if="choosePost" class="choosePosition">
+				<header class="header_com">
+	        		<a class="header_left" @click="choosePost=false">
+		            	<div class="dt">
+		                	<div></div>
+		            	</div>
+	        		</a>
+	        		<p class="header_title">选择职位类型</p>
+	        		<p class="header_right vertical_v">
+	        			<span @click="choosePost=false">完成</span>  
+	        		</p>
+	    		</header>
+	    		<div class="choooseContent">
+	    			<div class="search">
+	    				<input type="text" placeholder="请输入您要找的企业的名字" />
+	    				<img src="public/images/ss.png" width="20"/>
+	    			</div>
+	    			<div class="searchSorts flex_between_v">
+	    				<ul>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    					<li>技术</li>
+	    				</ul>
+	    				<ul>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    					<li>iT</li>
+	    				</ul>
+	    				<ul>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    					<li>前端</li>
+	    				</ul>
+	    			</div>
+	    		</div>
+			</div>
+		</div>
+	</body>
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/work_experience.js" type="text/javascript" charset="utf-8"></script>
+</html>

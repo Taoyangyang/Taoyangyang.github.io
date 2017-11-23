@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>简历名称</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/resume_name.css" />
+	</head>
+	<body>
+		<div class="resume_name" v-cloak>
+			<header-com header_title="简历名称" header_right="完成" :has_left="true" :has_right = "true" @right_click="rightClick"></header-com>
+			<div class="content">
+				<textarea v-model="resumeName" placeholder="请输入简历名称..."></textarea>
+				<p>0/16</p>
+			</div>
+		</div>
+	</body>
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/resume_name.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,79 @@
+.content {
+	margin-top: 50px;
+	background: white;
+	font-size: .95rem;
+}
+
+.content p {
+	padding: 5px 10px;
+	height: 30px;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.content p input[type="text"],
+.content p input[type="email"],
+.content p input[type="number"] {
+	width: calc(100% - 120px);
+	width: -moz-calc(100% - 120px);
+	width: -webkit-calc(100% - 120px);
+	height: 25px;
+	border: none;
+	text-align: right;
+}
+
+.content p input[type="date"] {
+	width: 100px;
+	border: none;
+}
+
+.content p input[type="radio"] {
+	margin-left: 10px;
+}
+
+.nowAddress span:nth-child(2) {
+	width: calc(100% - 120px);
+	width: -webkit-calc(100% - 120px);
+	width: -moz-calc(100% - 120px);
+	text-align: right;
+}
+
+.nowAddress select {
+	border: none;
+	max-width: 30%;
+}
+
+.addressDataChoose .board {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	z-index: 11;
+}
+
+.addressDataChoose .address {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 240px;
+	background: white;
+	z-index: 12;
+}
+
+.addressDataChoose .addressDivTitle {
+	padding: 10px;
+}
+
+.addressDataChoose .addressDivData ul {
+	height: 195px;
+	width: 30%;
+	overflow-y: auto
+}
+
+.addressDataChoose .addressDivData ul li {
+	text-align: center;
+	margin: 5px 0;
+	width: 100%;
+}

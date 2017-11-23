@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>个人信息</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/self_info.css" />
+	</head>
+	<body>
+		<div class="self_info" v-cloak>
+			<header-com header_title="个人信息" header_right="保存" :has_left="true" :has_right = "true" @right_click="rightClick"></header-com>
+			<div class="content">
+				<p class="name flex_between_v">
+					<span class="label">姓名：</span>
+					<input type="text" v-model="Uname" placeholder="请填写姓名" />
+				</p>
+				<p class="sex flex_between_v">
+					<span class="label">性别：</span>
+					<span class="chooseSex">
+						<label for="sex1"><input type="radio" id="sex1" name="sex" value="1" v-model="Usex" checked="checked"/>男</label>
+						<label for="sex2"><input type="radio" id="sex2" name="sex" value="0" v-model="Usex" />女</label>
+					</span>
+				</p>
+				<p class="birthday flex_between_v">
+					<span class="label">出生日期：</span>
+					<input type="date" v-model="Ubirthday" placeholder="请填写出生日期" />
+				</p>
+				<p class="workTime flex_between_v">
+					<span class="label">参加工作时间：</span>
+					<input type="date" v-model="UworkTime" placeholder="请填写参加工作时间" />
+				</p>
+				<p class="nowAddress flex_between_v">
+					<span class="label">现居住地：</span>
+					<span>
+						<select v-model="province">
+							<option value="">请选择</option>
+							<option value="">北京</option>
+							<option value="">上海</option>
+							<option value="">广东</option>
+							<option value="">河南</option>
+							<option value="">浙江</option>
+							<option value="">内蒙古</option>
+							<option value="">呼和浩特沙特柞木左旗西田存</option>
+						</select>
+						<select v-model="city">
+							<option value="">请选择</option>
+							<option value="">上海</option>
+							<option value="">广东</option>
+							<option value="">河南</option>
+							<option value="">浙江</option>
+						</select>
+						<select v-model="county">
+							<option value="">请选择</option>
+							<option value="">上海</option>
+							<option value="">广东</option>
+							<option value="">河南</option>
+							<option value="">浙江</option>
+						</select>
+					</span>
+					<!--<span @click="choosAddress">{{UnowAddress}}</span>-->
+				</p>
+				<p class="phone flex_between_v">
+					<span class="label">现用手机号：</span>
+					<input type="number" v-model="Uphone" placeholder="请填写手机号" />
+				</p>
+				<p class="email flex_between_v">
+					<span class="label">常用邮箱：</span>
+					<input type="email" v-model="Uemail" placeholder="请填写常用邮箱" />
+				</p>
+			</div>
+			<!--居住地选择-->
+			<div v-if="showAddress" class="addressDataChoose">
+				<div class="board" @click="showAddress = false"></div>
+				<div class="address">
+					<div class="addressDivTitle flex_between_v">
+						<span>取消</span>
+						<span>居住地</span>
+						<span style="color: #24C5B5;">确定</span>
+					</div>
+					<div class="addressDivData flex_between_v">
+						<ul class="province">
+							<li>232322222</li>
+							<li>232322222</li>
+							<li>232322222</li>
+							<li>232322222</li>
+							<li>232322222</li>
+							<li>232322222</li>
+							<li>232322222</li>
+							<li>232322222</li>
+							<li>232322222</li>
+							<li>232322222</li>
+							<li>232322222</li>
+						</ul>
+						<ul class="city">
+							<li>232322222</li>
+							<li>232322222</li>
+							<li>666666</li>
+							<li>666666</li>
+							<li>666666</li>
+							<li>666666</li>
+							<li>666666</li>
+							<li>666666</li>
+							<li>666666</li>
+							<li>666666</li>
+							<li>666666</li>
+							<li>666666</li>
+							<li>666666</li>
+							<li>666666</li>
+						</ul>
+						<ul class="county">
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+							<li>8989</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/self_info.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>积分商城</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/integral_store.css" />
+	</head>
+	<body>
+		<div class="integral_store" v-cloak>
+			<header-com header_title="积分商城" :has_right = "false"></header-com>
+			<div class="content">
+				<div class="cores">
+					<h2>12212</h2>
+					<p>我的积分</p>
+					<div class="cores_btns flex_around_v">
+						<span>兑换记录</span>
+						<span>积分说明</span>
+					</div>
+				</div>
+				<div class="goods_list">
+					<p class="vertical_v"><img src="public/images/duihuan.png" width="15"/>大家都在兑</p>
+					<ul class="flex_between_v">
+						<li v-for="item in 2">
+							<img src="public/images/cp.png"/>
+							<p class="goods_title">菜包一只</p>
+							<p class="goods_subTitle">精美菜包一直</p>
+							<p class="goods_price">￥10.00 + 1000积分</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--提示-->
+			<hint :hint_txt="hintTxt" :show_hint="showHint"></hint>
+			<!--加载动画-->
+			<loading v-if="showLoading"></loading>
+			<!--底部导航-->
+			<footer-com :Sindex="1"></footer-com>
+		</div>
+	</body>
+	
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/integral_store.js" type="text/javascript" charset="utf-8"></script>
+</html>

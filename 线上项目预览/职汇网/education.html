@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>教育背景</title>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/education.css" />
+	</head>
+	<body>
+		<div class="education" v-cloak>
+			<header-com header_title="教育背景" header_right="保存" :has_left="true" :has_right = "true" @right_click="rightClick"></header-com>
+			<div class="content">
+				<p class="flex_between_v">
+					<span class="label">学校：</span>
+					<input type="text" v-model="school_name" placeholder="学校名称" />
+				</p>
+				<p class="flex_between_v">
+					<span class="label">专业：</span>
+					<input type="text" v-model="professional_name" placeholder="所学专业" />
+				</p>
+				<p class="flex_between_v">
+					<span class="label">学历：</span>
+					<!--<input type="text" v-model="education" placeholder="学历" />-->
+					<select v-model="education">
+						<option value="">请选择学历</option>
+						<option v-for="item in educationList" :value="item.val">{{item.name}}</option>
+					</select>
+				</p>
+				<p class="time flex_between_v">
+					<span class="label">时间段：</span>
+					<span>
+						<input type="month" v-model="Btime" />至<input type="month" v-model="Etime" />
+					</span>
+				</p>
+				<div class="schoolContent">
+					<span class="label">在校经历：</span>
+					<textarea v-model="school_content" placeholder="请填写在校经历..."></textarea>
+					<span class="fontNum">0/200</span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="static/js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/components.js" type="text/javascript" charset="utf-8"></script>
+	<script src="public/js/education.js" type="text/javascript" charset="utf-8"></script>
+</html>
