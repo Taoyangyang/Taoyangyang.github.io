@@ -1,7 +1,7 @@
 var app = new Vue({
 	el: ".integral_store",
 	data:{
-		pages      : 1,s
+		pages      : 1,
 		getDataFlag: true,			//加载数据的开关
 		showLoading: false,			//数据加载动画
 		hintTxt    : "没有更多数据",	//提示内容
